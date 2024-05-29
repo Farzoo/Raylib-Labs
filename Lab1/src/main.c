@@ -73,21 +73,21 @@ int main() {
     Camera camera = { 0 };
     camera.position = (Vector3){ 4.0f, 4.0f, 4.0f };
     camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };
-    camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
+    camera.up = (Vector3){ 1.0f, 0.0f, 0.0f };
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
 
     Cube *cube = CreateCube();
     float rotationAngle = 1.0f;
 
-    Matrix rotation = MatrixRotateXYZ((Vector3){ DEG2RAD * rotationAngle, DEG2RAD * rotationAngle, 0.0f });
+    Matrix rotation = MatrixRotateXYZ((Vector3){ DEG2RAD * rotationAngle,0.0f, 0.0f });
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
 
         camera.position = Vector3Transform(camera.position, rotation);
-        UpdateCamera(&camera);
+        UpdateCamera(&camera, CAMERA_PERSPECTIVE);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);

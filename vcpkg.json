@@ -1,0 +1,18 @@
+{
+  "name" : "raylib-template",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "fc6345e114c2e2c4f9714037340ccb08326b3e8c",
+  "dependencies" : [ {
+    "name" : "raylib",
+    "version>=" : "5.0"
+  }, {
+    "name" : "vcpkg-cmake-config",
+    "version>=" : "2022-02-06#1"
+  }, {
+    "name" : "vcpkg-cmake",
+    "version>=" : "2024-04-18"
+  }, {
+    "name" : "ode",
+    "version>=" : "0.16.4#1"
+  } ]
+}
