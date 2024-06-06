@@ -10,3 +10,4 @@ find_package(ode CONFIG REQUIRED)
 # Inclure les sous-projets
 add_subdirectory(./Lab1)
 add_subdirectory(./Lab2)
+add_subdirectory(./Lab5)

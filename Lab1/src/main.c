@@ -68,7 +68,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 600;
 
-    InitWindow(screenWidth, screenHeight, "Raylib 3D Cube Outline Example");
+    InitWindow(screenWidth, screenHeight, "3D Cube avec Raylib");
 
     Camera camera = { 0 };
     camera.position = (Vector3){ 4.0f, 4.0f, 4.0f };
@@ -80,14 +80,14 @@ int main() {
     Cube *cube = CreateCube();
     float rotationAngle = 1.0f;
 
-    Matrix rotation = MatrixRotateXYZ((Vector3){ DEG2RAD * rotationAngle,0.0f, 0.0f });
+    Matrix rotation = MatrixRotateXYZ((Vector3){ DEG2RAD * rotationAngle, 0.0f, 0.0f });
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
 
         camera.position = Vector3Transform(camera.position, rotation);
-        UpdateCamera(&camera, CAMERA_PERSPECTIVE);
+        //UpdateCamera(&camera, CAMERA_PERSPECTIVE);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -96,11 +96,9 @@ int main() {
 
         DrawCubeOutline(cube);
 
-        DrawGrid(10, 1.0f);
-
         EndMode3D();
 
-        DrawText("3D Cube Outline with Raylib", 10, 10, 20, DARKGRAY);
+        DrawText("3D Cube avec Raylib", 10, 10, 20, DARKGRAY);
 
         EndDrawing();
     }
